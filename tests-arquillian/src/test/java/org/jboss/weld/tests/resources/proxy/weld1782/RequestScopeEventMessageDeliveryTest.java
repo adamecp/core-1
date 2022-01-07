@@ -70,7 +70,7 @@ public class RequestScopeEventMessageDeliveryTest {
         assertTrue(AbstractMessageListener.isInitializedEventObserver());
 
         // wait for the request scope for the message delivery to be destroyed and verify that the event was delivered
-        controller.getContextDestroyedLatch().await(10, TimeUnit.SECONDS);
+        controller.getContextDestroyedLatch().await(15, TimeUnit.SECONDS);
         assertTrue(observer.isDestroyedCalled());
     }
 }
